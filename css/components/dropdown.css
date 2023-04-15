@@ -1,0 +1,30 @@
+.dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown__head {
+    width: 100%;
+    height: 36px;
+    border-radius: var(--radius-border);
+    border: 1px solid var(--color-border);
+    padding: 0 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dropdown__head__icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dropdown__head__placeholder {
+    font-size: 13px;
+    font-style: italic;
+    font-family: mMisa Font;
+    color: #666;
+}

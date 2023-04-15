@@ -1,0 +1,21 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    color: #fff;
+    font-size: 13px;
+    height: 36px;
+    padding: 0 12px;
+    cursor: pointer;
+    min-width: 110px;
+    background-color: #1aa4c8;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.button.button--sub {
+    color: #000;
+    background-color: #fff;
+}

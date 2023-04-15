@@ -1,0 +1,88 @@
+@import url(./icon.css);
+@import url(./layouts/menu.css);
+@import url(./layouts/header.css);
+@import url(./layouts/table.css);
+
+@import url(./components/input_number.css);
+@import url(./components/textfield.css);
+@import url(./components/select.css);
+@import url(./components/button.css);
+@import url(./components/button_icon.css);
+@import url(./components/input_checkbox.css);
+@import url(./components/paginate.css);
+@import url(./components/select_pure.css);
+@import url(./components/popup.css);
+@import url(./components/form.css);
+@import url(./components/textfield_form.css);
+@import url(./components/dropdown.css);
+@import url(./components/number_form.css);
+@import url(./components/input_date.css);
+
+
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Misa Font;
+}
+
+@font-face {
+    font-family: Misa Font;
+    src: url('../assets/font/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: mMisa Font;
+    src: url('../assets/font/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: bMisa Font;
+    src: url('../assets/font/Roboto/Roboto-Bold.ttf');
+}
+
+.app {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    height: 100vh;
+}
+
+.app__left {
+    flex-shrink: 0;
+}
+
+.app__right {
+    flex-grow: 1;
+    max-width: calc(100% - 220px);
+}
+
+:root {
+    --radius-border: 4px;
+    --color-border: #afafaf;
+}
+
+.body {
+    height: calc(100vh - 100px);
+    padding: 16px;
+    background-color: #f4f7ff;
+    max-width: 100%;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 5px;
+    font-size: 13px;
+    font-family: mMisa Font;
+    margin-bottom: 8px;
+}
+
+.label__required {
+    color: rgb(227, 42, 42);
+    margin-top: 5px;
+}

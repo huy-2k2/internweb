@@ -1,0 +1,36 @@
+.input_date__textfield {
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-border);
+    overflow: hidden;
+    position: relative;
+}
+
+.input_date__input {
+    border: none;
+    background-color: none;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+}
+
+.input_date__input::-webkit-calendar-picker-indicator {
+    background: url('../../assets/icon/qlts-icon.svg') no-repeat -287px -67px;
+	width: 18px;
+	height: 18px;
+    opacity: 1;
+    cursor: pointer;
+    display: block;
+    padding-left: 12px;
+}
+
+.input_date__value {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    left: 12px;
+    font-family: mMisa Font;
+    font-weight: 400;
+}

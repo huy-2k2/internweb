@@ -1,0 +1,22 @@
+.textfield_form {
+    width: 100%;
+}
+
+.textfield_form__input {
+    height: 36px;
+    padding-left: 12px;
+    outline: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-border);
+    width: 100%;
+}
+
+.textfield_form__input:hover,
+.textfield_form__input:focus {
+    border-color: #1aa4c8;
+}
+
+.textfield_form__input::placeholder {
+    font-style: italic;
+    color: #666;
+}
