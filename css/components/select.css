@@ -21,6 +21,8 @@
 .select__input__value {
     font-size: 13px;
     flex-grow: 1;
+    font-weight: 400;
+    font-family: mMisa Font;
 }
 
 .select__input:focus + .select__options {

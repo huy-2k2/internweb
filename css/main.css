@@ -17,6 +17,8 @@
 @import url(./components/dropdown.css);
 @import url(./components/number_form.css);
 @import url(./components/input_date.css);
+@import url(./components/dialog.css);
+@import url(./components/toastmessage.css);
 
 
 *  {
@@ -56,8 +58,12 @@ body {
 }
 
 .app__right {
+    max-width: calc(100% - 72px);
     flex-grow: 1;
-    max-width: calc(100% - 220px);
+}
+
+.app:has(.menu.active) .app__right {
+    max-width: calc(100% - 206px);
 }
 
 :root {
@@ -85,4 +91,23 @@ body {
 .label__required {
     color: rgb(227, 42, 42);
     margin-top: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border: 5px solid white;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+.field__validate__error {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: mMisa Font;
+    color: rgba(255, 0, 0, 0.673);
 }

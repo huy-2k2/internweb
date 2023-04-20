@@ -1,0 +1,36 @@
+.dialog {
+    background-color: #fff;
+    border-radius: var(--radius-border);
+    padding: 40px 20px 20px 30px;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.155);
+    max-width: 500px;
+}
+
+.dialog__head {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.dialog__title {
+    font-family: mMisa Font;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.dialog__control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 8px;
+    margin-top: 20px;
+}
+
+.dialog__control .button--sub {
+    border: 1px solid var(--color-border);
+}
+
+.dialog__control .button--sub:nth-child(2) {
+    border-color: #1aa4c8;
+    color: #1aa4c8;
+}

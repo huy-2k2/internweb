@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../lib/main.css">
 </head>
 <body>
     <div class="app">
@@ -70,9 +71,11 @@
                     </li>
                 </ul>
                 <div class="menu__footer">
-                    <button class="menu__footer__toggle">
-                        <div class="icon-arrow-left"></div>
-                        <div class="icon-arrow-right"></div>
+                    <button class="menu__footer__button menu__footer__button--right">
+                        <div class="icon-arrow-right--white"></div>
+                    </button>
+                    <button class="menu__footer__button menu__footer__button--left">
+                        <div class="icon-arrow-left--white"></div>
                     </button>
                 </div>
             </div>
@@ -141,7 +144,7 @@
                         <div class="select__icon">
                             <div class="icon-header-filter"></div>
                         </div>
-                        <p class="select__input__value">bộ phần sử dụng</p>
+                        <p class="select__input__value">Bộ phận sử dụng</p>
                         <input id="select-type-user" class="select__input" type="text">
                         <ul class="select__options">
                             <li class="select__item">Sản phầm A</li>
@@ -153,18 +156,18 @@
                         </div>
                     </label>
                     <div class="header__bottom__right">
-                        <button class="button">
+                        <button popup_button="add_legacy" popup_button_type="open" class="button" id="btn_add_legacy">
                             <div class="butotn__icon">
-                                <div class="icon-small-plus"></div>
+                                <div class="icon-small-plus--white"></div>
                             </div>
                             <p class="button__text">Thêm tài sản</p>
                         </button>
-                        <button class="button-icon">
+                        <button title="Nhẩn bản" class="button-icon">
                             <div class="button-icon__icon">
                                 <div class="icon-excel"></div>
                             </div>
                         </button>
-                        <button class="button-icon">
+                        <button title="Xóa" class="button-icon">
                             <div class="button-icon__icon">
                                 <div class="icon-bin"></div>
                             </div>
@@ -173,7 +176,7 @@
                 </div>
             </div>
             <div class="body">
-                <div class="table-wrapper">
+                <div class="table-wrapper custom-scrollbar">
                     <table class="table">
                         <thead>
                             <tr>
@@ -194,13 +197,13 @@
                             <th scope="col">Bộ phận sử dụng</th>
                             <th scope="col">Số lượng</th>
                             <th scope="col">Nguyên giá</th>
-                            <th scope="col">HM/KH lũy kế</th>
+                            <th title="Hao mòn/ khấu hao lũy kế" scope="col">HM/KH lũy kế</th>
                             <th scope="col">Giá trị còn lại</th>
                             <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody class="table__body">
-                                <tr>
+                                <tr class="active">
                                     <td scope="row">
                                         <div class="input_checkbox">
                                             <input id="checkbox-1" type="checkbox">
@@ -737,199 +740,244 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="popup">
+        <div popup="add_legacy" id="popup_form" class="popup">
             <form class="form">
                 <div class="form__top">
                     <div class="form__head">
                         <h3 class="form__title">Sửa tài sản</h3>
-                        <div class="form__close">
+                        <div popup_button="add_legacy" popup_button_type="close" class="form__close">
                             <div class="icon-close"></div>
                         </div>
                     </div>
                     <div class="form__body">
                         <div class="form__body__item form__body__item--1">
-                            <div class="textfield_form">
+                            <div class="textfield_form field__validate" types="required">
                                 <label class="label" for="product-id">
-                                    <span>Mã tài sản</span>
+                                    <span class="field__validate__label">Mã tài sản</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập mã tài sản" value="TS00001" class="textfield_form__input" type="text" id="product-id">
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--2">
-                            <div class="textfield_form">
+                            <div class="textfield_form field__validate" types="required">
                                 <label class="label" for="product-name">
-                                    <span>Tên tài sản</span>
+                                    <span class="field__validate__label" >Tên tài sản</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập tên tài sản" class="textfield_form__input" type="text" id="product-name">
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="dropdown">
-                                <label class="label">
-                                    <span>Mã bộ phận sử dụng</span>
-                                    <span class="label__required">*</span>
-                                </label>
-                                <div class="dropdown__head">
-                                    <div class="dropdown__head__value"></div>
-                                    <div class="dropdown__head__placeholder">Chọn mã bộ phận sử dụng</div>
-                                    <div class="dropdown__head__icon">
-                                        <div class="icon-down"></div>
-                                    </div>
-                                </div>
+                            <div 
+                                data-url="https://jsonplaceholder.typicode.com/users"
+                                data-text="name"
+                                data-value="id"
+                                data-label="Mã bộ phận sử dụng"
+                                data-required="1"
+                                data-placeholder="Chọn mã bộ phận sử dụng"
+                                class="combobox field__validate"
+                                types="required"
+                            >
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--2">
-                            <div class="textfield_form">
+                            <div class="textfield_form field__validate" types="required">
                                 <label class="label" for="product-name">
-                                    <span>Tên bộ phận sử dụng</span>
+                                    <span class="field__validate__label">Tên bộ phận sử dụng</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập tên bộ phận sử dụng" class="textfield_form__input" type="text" id="product-name">
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="dropdown">
-                                <label class="label">
-                                    <span>Mã loại tài sản</span>
-                                    <span class="label__required">*</span>
-                                </label>
-                                <div class="dropdown__head">
-                                    <div class="dropdown__head__value"></div>
-                                    <div class="dropdown__head__placeholder">Chọn mã loại tài sản</div>
-                                    <div class="dropdown__head__icon">
-                                        <div class="icon-down"></div>
-                                    </div>
-                                </div>
+                            <div 
+                                data-url="https://jsonplaceholder.typicode.com/users"
+                                data-text="name"
+                                data-value="id"
+                                data-label="Mã loại tài sản"
+                                data-required="1"
+                                data-placeholder="Chọn mã loại tài sản"
+                                class="combobox field__validate"
+                                types="required"
+                            >
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--2">
-                            <div class="textfield_form">
+                            <div class="textfield_form field__validate" types="required">
                                 <label class="label" for="product-name">
-                                    <span>Tên loại tài sản</span>
+                                    <span class="field__validate__label">Tên loại tài sản</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập tên loại tài sản" class="textfield_form__input" type="text" id="product-name">
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="required number" >
                                 <label class="label" for="">
-                                    <span>Số lượng</span>
+                                    <span class="field__validate__label">Số lượng</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="1" value="1" type="number">
                                     <div class="number_form__control">
-                                        <button class="number_form__button">
+                                        <span class="number_form__button">
                                             <div class="icon-up"></div>
-                                        </button>
-                                        <button class="number_form__button">
+                                        </span>
+                                        <span class="number_form__button">
                                             <div class="icon-down"></div>
-                                        </button>
+                                        </span>
                                     </div>
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="required number">
                                 <label class="label" for="">
-                                    <span>Nguyên giá</span>
+                                    <span class="field__validate__label">Nguyên giá</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="1" value="1" type="number">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="required number">
                                 <label class="label" for="">
-                                    <span>Số năm sử dụng</span>
+                                    <span class="field__validate__label">Số năm sử dụng</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="1" value="1" type="number">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="required number">
                                 <label class="label" for="">
-                                    <span>Tỷ lệ hao mòn (%)</span>
+                                    <span class="field__validate__label">Tỷ lệ hao mòn (%)</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="1" value="1" type="number">
                                     <div class="number_form__control">
-                                        <button class="number_form__button">
+                                        <span class="number_form__button">
                                             <div class="icon-up"></div>
-                                        </button>
-                                        <button class="number_form__button">
+                                        </span>
+                                        <span class="number_form__button">
                                             <div class="icon-down"></div>
-                                        </button>
+                                        </span>
                                     </div>
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="required number">
                                 <label class="label" for="">
-                                    <span>Giá trị hao mòn năm</span>
+                                    <span class="field__validate__label">Giá trị hao mòn năm</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="1" value="1" type="number">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="number_form">
+                            <div class="number_form field__validate" types="number">
                                 <label class="label" for="">
-                                    <span>Năm theo dõi</span>
+                                    <span class="field__validate__label">Năm theo dõi</span>
                                 </label>
                                 <div class="number_form__textfield">
                                     <input class="number_form__input" min="2020" value="2021" type="number">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="input_date">
+                            <div class="input_date field__validate" types="required date">
                                 <label class="label" for="">
-                                    <span>Ngày mua</span>
+                                    <span class="field__validate__label">Ngày mua</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="input_date__textfield">
                                     <div class="input_date__value"></div>
                                     <input class="input_date__input" type="date">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--1">
-                            <div class="input_date">
+                            <div class="input_date field__validate" types="required date">
                                 <label class="label" for="">
-                                    <span>Ngày bắt đầu sử dụng</span>
+                                    <span class="field__validate__label">Ngày bắt đầu sử dụng</span>
                                     <span class="label__required">*</span>
                                 </label>
                                 <div class="input_date__textfield">
                                     <div class="input_date__value"></div>
                                     <input class="input_date__input"  type="date">
                                 </div>
+                                <span class="field__validate__error"></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form__bottom">
-                    <button class="button button--sub">
+                    <button type="button" class="button button--sub form__close">
                         <p class="button__text">Hủy</p>
                     </button>
-                    <button class="button">
+                    <button type="submit" class="button">
                         <p class="button__text">Lưu</p>
                     </button>
                 </div>
             </form>
-        </div> -->
+        </div>  
+        <div id="popup_cancel" class="popup">
+            <div class="dialog">
+                <div class="dialog__head">
+                    <div class="dialog__icon">
+                        <div class="icon-warning"></div>
+                    </div>
+                    <div class="dialog__title">bạn có muốn hủy bỏ khai báo tài sản này?</div>
+                </div>
+                <div class="dialog__control">
+                    <button id="n_confirm_cancel" class="button button--sub">Không</button>
+                    <button id="confirm_cancel" class="button">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup_add" class="popup">
+            <div class="dialog">
+                <div class="dialog__head">
+                    <div class="dialog__icon">
+                        <div class="icon-warning"></div>
+                    </div>
+                    <div class="dialog__title">Thông tin thay đổi sẽ không được cập nhật nếu bạn không lưu. Bạn có muốn lưu các thay đổi này?</div>
+                </div>
+                <div class="dialog__control">
+                    <button id="n_confirm_add" class="button button--sub">Hủy bỏ</button>
+                    <button id="n_confirm_add--out" class="button button--sub">Không Lưu</button>
+                    <button id="confirm_add" class="button">Lưu</button>
+                </div>
+            </div>
+        </div>
+        <div class="toastmessage">
+            <div class="toastmessage__icon">
+                <div class="icon-checked-green"></div>
+            </div>
+            <div class="toastmessage__text">Lưu dữ liệu thành công</div>
+        </div>
     </div>
+    <script src="../js/main.js"></script>
+    <script src="../lib/js/combobox.js"></script>
 </body>
 </html>

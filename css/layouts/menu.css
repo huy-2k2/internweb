@@ -72,11 +72,11 @@
     border-top: 1px solid var(--color-border);
 }
 
-.menu__footer__toggle {
+.menu__footer__button {
     background-color: transparent;
     cursor: pointer;
     outline: none;
-    padding: 8px 16px;
+    padding: 6px 8px;
     border: var(--radius-border);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-border);
@@ -91,14 +91,14 @@
     display: block;
 }
 
-.menu__footer__toggle *:first-child {
-    display: none;
-}
-
-.menu.active .menu__footer__toggle *:last-child {
-    display: none;
-}
-
-.menu.active .menu__footer__toggle *:first-child {
+.menu.active .menu__footer__button.menu__footer__button--left  {
     display: block;
+}
+
+.menu .menu__footer__button.menu__footer__button--left  {
+    display: none;
+}
+
+.menu.active .menu__footer__button.menu__footer__button--right  {
+    display: none;
 }

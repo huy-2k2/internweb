@@ -23,7 +23,7 @@
 .form__body {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     width: 812px;
     column-gap: 16px;
     row-gap: 20px;
@@ -45,4 +45,8 @@
     padding: 0 16px;
     align-items: center;
     justify-content: flex-end;
+}
+
+.form__close {
+    cursor: pointer;
 }

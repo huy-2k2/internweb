@@ -58,6 +58,19 @@
 	height: 12px;
 }
 
+.icon-arrow-left--white {
+	background: url('../assets/icon/qlts-icon.svg') no-repeat -29px -290px;
+	width: 7px;
+	height: 12px;
+
+}
+
+.icon-arrow-right--white {
+	background: url('../assets/icon/qlts-icon.svg') no-repeat -73px -290px;
+	width: 7px;
+	height: 12px;
+}
+
 .icon-up {
     background: url('../assets/icon/qlts-icon.svg') no-repeat -28px -338px;
 	width: 7px;
@@ -112,6 +125,12 @@
 	height: 10px;
 }
 
+.icon-small-plus--white {
+    background: url('../assets/icon/qlts-icon.svg') no-repeat -204px -424px;
+	width: 8px;
+	height: 8px;
+}
+
 .icon-excel {
     background: url('../assets/icon/qlts-icon.svg') no-repeat -287px -111px;
 	width: 18px;
@@ -158,4 +177,19 @@
 	background: url('../assets/icon/qlts-icon.svg') no-repeat -287px -67px;
 	width: 18px;
 	height: 18px;
+}
+
+
+/* icon for advance file */
+
+.icon-warning {
+	background: url('../assets/icon/qlts-icon-adv.svg') no-repeat -470px -28px;
+	width: 36px;
+	height: 32px;
+}
+
+.icon-checked-green {
+	background: url('../assets/icon/qlts-icon-adv.svg') no-repeat -464px -292px;
+	width: 32px;
+	height: 32px;
 }
