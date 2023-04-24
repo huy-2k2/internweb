@@ -90,7 +90,7 @@ body {
 
 .label__required {
     color: rgb(227, 42, 42);
-    margin-top: 5px;
+    margin-bottom: -5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar {

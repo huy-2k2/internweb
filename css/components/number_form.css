@@ -12,6 +12,10 @@
     position: relative;
 }
 
+.number_form[data-error] .number_form__textfield {
+    border-color: rgba(255, 0, 0, 0.673);
+}
+
 .number_form__input {
     border: none;
     outline: none;
@@ -19,6 +23,10 @@
     height: 100%;
     width: 100%;
     padding-right: 20px;
+}
+
+.number_form:not(:has(.label__required)) .number_form__input {
+    background-color: #eeeeeeaa;
 }
 
 .number_form__control {

@@ -157,17 +157,17 @@
                     </label>
                     <div class="header__bottom__right">
                         <button popup_button="add_legacy" popup_button_type="open" class="button" id="btn_add_legacy">
-                            <div class="butotn__icon">
-                                <div class="icon-small-plus--white"></div>
+                            <div class="button__icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 112v288M400 256H112"/></svg>
                             </div>
                             <p class="button__text">Thêm tài sản</p>
                         </button>
-                        <button title="Nhẩn bản" class="button-icon">
+                        <button title="Nhân bản" id="multiDuplicateBtn" class="button-icon">
                             <div class="button-icon__icon">
                                 <div class="icon-excel"></div>
                             </div>
                         </button>
-                        <button title="Xóa" class="button-icon">
+                        <button title="Xóa" id="multiDeleteBtn" class="button-icon">
                             <div class="button-icon__icon">
                                 <div class="icon-bin"></div>
                             </div>
@@ -203,37 +203,6 @@
                             </tr>
                         </thead>
                         <tbody class="table__body">
-                                <tr class="active">
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td scope="row">
                                         <div class="input_checkbox">
@@ -268,15 +237,15 @@
                                 <tr>
                                     <td scope="row">
                                         <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
+                                            <input id="checkbox-2" type="checkbox">
+                                            <label for="checkbox-2">
                                                 <div class="input_checkbox__icon">
                                                     <div class="icon-checkbox"></div>
                                                 </div>
                                             </label>
                                         </div>
                                     </td>
-                                    <td>1</td>
+                                    <td>2</td>
                                     <td>MXT88618</td>
                                     <td>Máy tính sách tay Fujitsu</td>
                                     <td scope="row">Máy vi tính sách tay</td>
@@ -299,387 +268,15 @@
                                 <tr>
                                     <td scope="row">
                                         <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
+                                            <input id="checkbox-3" type="checkbox">
+                                            <label for="checkbox-3">
                                                 <div class="input_checkbox__icon">
                                                     <div class="icon-checkbox"></div>
                                                 </div>
                                             </label>
                                         </div>
                                     </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
-                                    <td>MXT88618</td>
-                                    <td>Máy tính sách tay Fujitsu</td>
-                                    <td scope="row">Máy vi tính sách tay</td>
-                                    <td>Phòng Hành chính Kế toán</td>
-                                    <td>1</td>
-                                    <td>10.000.000</td>
-                                    <td>1.125.000</td>
-                                    <td>8.775.000</td>
-                                    <td>
-                                        <div class="table__function">
-                                            <button class="table__function__button table__function__edit">
-                                                <div class="icon-pen-edit"></div>
-                                            </button>
-                                            <button class="table__function__button table__function__detail">
-                                                <div class="icon-file-detail"></div>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">
-                                        <div class="input_checkbox">
-                                            <input id="checkbox-1" type="checkbox">
-                                            <label for="checkbox-1">
-                                                <div class="input_checkbox__icon">
-                                                    <div class="icon-checkbox"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>MXT88618</td>
                                     <td>Máy tính sách tay Fujitsu</td>
                                     <td scope="row">Máy vi tính sách tay</td>
@@ -744,7 +341,7 @@
             <form class="form">
                 <div class="form__top">
                     <div class="form__head">
-                        <h3 class="form__title">Sửa tài sản</h3>
+                        <h3 class="form__title">Thêm tài sản</h3>
                         <div popup_button="add_legacy" popup_button_type="close" class="form__close">
                             <div class="icon-close"></div>
                         </div>
@@ -784,10 +381,9 @@
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--2">
-                            <div class="textfield_form field__validate" types="required">
+                            <div class="textfield_form field__validate" types="">
                                 <label class="label" for="product-name">
                                     <span class="field__validate__label">Tên bộ phận sử dụng</span>
-                                    <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập tên bộ phận sử dụng" class="textfield_form__input" type="text" id="product-name">
                                 <span class="field__validate__error"></span>
@@ -807,10 +403,9 @@
                             </div>
                         </div>
                         <div class="form__body__item form__body__item--2">
-                            <div class="textfield_form field__validate" types="required">
+                            <div class="textfield_form field__validate" types="">
                                 <label class="label" for="product-name">
                                     <span class="field__validate__label">Tên loại tài sản</span>
-                                    <span class="label__required">*</span>
                                 </label>
                                 <input placeholder="Nhập tên loại tài sản" class="textfield_form__input" type="text" id="product-name">
                                 <span class="field__validate__error"></span>
@@ -952,6 +547,20 @@
                 <div class="dialog__control">
                     <button id="n_confirm_cancel" class="button button--sub">Không</button>
                     <button id="confirm_cancel" class="button">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+        <div id="popup_delete" class="popup">
+            <div class="dialog">
+                <div class="dialog__head">
+                    <div class="dialog__icon">
+                        <div class="icon-warning"></div>
+                    </div>
+                    <div class="dialog__title">bạn có muốn hủy bỏ khai báo tài sản này?</div>
+                </div>
+                <div class="dialog__control">
+                    <button id="n_confirm_delete" class="button button--sub">Không</button>
+                    <button id="confirm_delete" class="button">xóa</button>
                 </div>
             </div>
         </div>

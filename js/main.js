@@ -1,6 +1,5 @@
-
 window.onload = function() {
-    initialEvent()  
+    initialEvent()
 }
 
 function initialEvent() {
@@ -9,6 +8,10 @@ function initialEvent() {
     handleSubmitLegacy()
     handleEventCancelForm()
     handleEventFormAdd()
+    handleEventTableCheckbox()
+    handleMultiDuplicateButton()
+    handleMultiDeleteButton()
+    handleOpenDeleteBtn()
 }
 
 function handleSubmitLegacy() {
@@ -18,7 +21,7 @@ function handleSubmitLegacy() {
         e.preventDefault()
         const fields = this.querySelectorAll('.field__validate')
         let isValid = true
-        fields.forEach(field => {
+        fields.forEach(field=>{
             const input = field.querySelector('input')
             const value = input.value
             const types = field.getAttribute('types').split(" ")
@@ -26,11 +29,16 @@ function handleSubmitLegacy() {
             const errorElement = field.querySelector('.field__validate__error')
             const errors = validate(value, types, fieldName)
             errorElement.innerText = errors[0] || ""
-            if(errors.length)
+            if (errors.length) {
                 isValid = false
-        })
+                field.setAttribute('data-error', true)
+            } else {
+                field.removeAttribute('data-error')
+            }
+        }
+        )
 
-        if(isValid)
+        if (isValid)
             popupConfirmAdd.classList.add('active')
 
     }
@@ -38,43 +46,46 @@ function handleSubmitLegacy() {
 
 function validate(value, types, fieldName) {
     const errors = []
-    const dateRegex =  /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/
-    types.forEach(type => {
+    const dateRegex = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/
+    types.forEach(type=>{
         switch (type) {
-            case "required":
-                if(!value.length)
-                    errors.push(`Cần nhập ${fieldName}.`)
-                break;
-            case "number":
-                if(Number.isNaN(value))
-                    errors.push(`${fieldName} phải là số.`)
-                break;
-            case "date":
-                if(!dateRegex.test(value))
-                    errors.push(`${fieldName} phải có định dạng dd/mm/yyyy.`)
-                break;
-            default:
-                break;
+        case "required":
+            if (!value.length)
+                errors.push(`Cần nhập ${fieldName}.`)
+            break;
+        case "number":
+            if (Number.isNaN(value))
+                errors.push(`${fieldName} phải là số.`)
+            break;
+        case "date":
+            if (!dateRegex.test(value))
+                errors.push(`${fieldName} phải có định dạng dd/mm/yyyy.`)
+            break;
+        default:
+            break;
         }
-    })
+    }
+    )
     return errors;
 }
+
 
 function handleEventToggleForm() {
     const addButtons = document.querySelector('#btn_add_legacy')
     const closeButtons = document.querySelectorAll('.form__close')
     const popup = document.querySelector('#popup_form')
-    
+
     addButtons.onclick = function() {
         popup.classList.add('active')
     }
 
-   closeButtons.forEach(closeButton => {
+    closeButtons.forEach(closeButton=>{
         closeButton.onclick = function() {
             const confirmCancelPopup = document.querySelector('#popup_cancel')
             confirmCancelPopup.classList.add('active')
         }
-   })
+    }
+    )
 }
 
 function handleEventFormAdd() {
@@ -105,9 +116,10 @@ function handleSubmit() {
     const toastMessage = document.querySelector('.toastmessage')
     console.log(toastMessage);
     toastMessage.classList.add('active')
-    setTimeout(() => {
+    setTimeout(()=>{
         toastMessage.classList.remove('active')
-    }, 3000)
+    }
+    , 3000)
 }
 
 function handleEventCancelForm() {
@@ -131,14 +143,20 @@ function handleEventCancelForm() {
 function resetForm() {
     const inputs = document.querySelectorAll('.form input')
     const errors = document.querySelectorAll('.form .field__validate__error')
-    inputs.forEach(input => {
-        if(!input.hasAttribute('value'))
-            input.value = ""
-    })
+    const fields = document.querySelectorAll('.field__validate')
 
-    errors.forEach(error => {
+    fields.forEach(field => field.removeAttribute('data-error'))
+
+    inputs.forEach(input=>{
+        if (!input.hasAttribute('value'))
+            input.value = ""
+    }
+    )
+
+    errors.forEach(error=>{
         error.innerText = ""
-    })
+    }
+    )
 }
 
 function handleEventToggleMenu() {
@@ -155,3 +173,89 @@ function handleEventToggleMenu() {
     }
 }
 
+function handleEventTableCheckbox() {
+    const checkboxHead = document.querySelector('.table #checkbox-head')
+    const checkboxRows = document.querySelectorAll('.table__body .input_checkbox input')
+    checkboxRows.forEach(checkboxRow => {
+        checkboxRow.oninput = function() {
+            let count = 0
+            for(let i = 0; i < checkboxRows.length; i++) {
+                if(checkboxRows[i].checked)
+                    count++
+            }
+            checkboxHead.checked = count == checkboxRows.length            
+        }
+    })
+    checkboxHead.oninput = function() {
+        checkboxRows.forEach(checkboxRow => checkboxRow.checked = checkboxHead.checked)
+    }
+}
+
+function handleMultiDuplicateButton() {
+    const multiDuplicateBtn = document.querySelector('#multiDuplicateBtn')
+    const tbody = document.querySelector('.table__body')
+    multiDuplicateBtn.onclick = function() {
+        let trs = [...document.querySelectorAll('.table__body tr')]
+        let index = trs.length
+        trs = trs.filter(tr => {
+            const input_checkbox = tr.querySelector('.input_checkbox input')
+            return input_checkbox.checked
+        })
+        trs.forEach(tr => {
+            index++
+            const newTr = tr.cloneNode(true)
+            newTr.querySelector('td:nth-child(2)').innerText = index
+            newTr.querySelector('.input_checkbox label').setAttribute('for', `checkbox-${index}`)
+            newTr.querySelector('.input_checkbox input').setAttribute('id', `checkbox-${index}`)
+            tbody.appendChild(newTr)
+        })
+        const inputs_checkbox = document.querySelectorAll('.input_checkbox input')
+        inputs_checkbox.forEach(input => input.checked = false)
+        handleEventTableCheckbox()
+    }
+} 
+
+function handleMultiDeleteButton() {
+    const confirmDeleteBtn = document.querySelector('#confirm_delete')
+    const tbody = document.querySelector('.table__body')
+    const popupDelete = document.querySelector('#popup_delete')
+    confirmDeleteBtn.onclick = function() {
+        let trs = [...document.querySelectorAll('.table__body tr')]
+        const removeTrs = []
+        let index = 1
+        trs.forEach(tr => {
+            const input_checkbox = tr.querySelector('.input_checkbox input')
+            tr.querySelector('td:nth-child(2)').innerText = index
+            tr.querySelector('.input_checkbox label').setAttribute('for', `checkbox-${index}`)
+            input_checkbox.setAttribute('id', `checkbox-${index}`)
+            if(input_checkbox.checked) {
+                removeTrs.push(tr)
+            } else {
+                index++
+            }
+        })
+        removeTrs.forEach(removeTr => tbody.removeChild(removeTr))
+        handleEventTableCheckbox()
+        popupDelete.classList.remove('active')
+    }
+}
+
+function handleOpenDeleteBtn() {
+    const multiDeleteBtn = document.querySelector('#multiDeleteBtn')
+    const nConfirmDelete = document.querySelector('#n_confirm_delete')
+    const popupDelete = document.querySelector('#popup_delete')
+    multiDeleteBtn.onclick = function() {
+        let trs = [...document.querySelectorAll('.table__body tr')]
+        trs = trs.filter(tr => {
+            const input_checkbox = tr.querySelector('.input_checkbox input')
+            return input_checkbox.checked
+        })
+        if(!trs.length)
+            return
+        popupDelete.querySelector('.dialog__title').innerHTML = `<strong>${trs.length < 10? '0': ''}${trs.length}</strong> tài sản đã được chọn. Bạn có muốn xóa các tài sản này khỏi danh sách?`
+        popupDelete.classList.add('active')
+    }
+    nConfirmDelete.onclick = function() {
+        popupDelete.classList.remove('active')
+    }
+}

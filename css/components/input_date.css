@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.input_date[data-error] .input_date__textfield {
+    border-color: rgba(255, 0, 0, 0.673);
+}
+
 .input_date__input {
     border: none;
     background-color: none;

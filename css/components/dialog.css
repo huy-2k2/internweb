@@ -9,13 +9,14 @@
 .dialog__head {
     display: flex;
     align-items: center;
-    column-gap: 16px;
+    column-gap: 24px;
 }
 
 .dialog__title {
     font-family: mMisa Font;
     font-weight: 400;
     font-size: 13px;
+    line-height: 1.6;
 }
 
 .dialog__control {

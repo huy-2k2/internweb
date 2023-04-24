@@ -32,11 +32,11 @@
     visibility: hidden;
 }
 
-.table tr.active {
+.table tr:hover {
     background-color: rgba(26, 164, 200, .2);
 }
 
-.table tr.active td:last-child > * {
+.table tr:hover td:last-child > * {
     opacity: 1;
     visibility: visible;
 }
@@ -76,7 +76,8 @@
 .table__function__button {
     border: none;
     background-color: transparent;
-    outline: non;
+    outline: none;
+    cursor: pointer;
 }
 
 .table__footer {
